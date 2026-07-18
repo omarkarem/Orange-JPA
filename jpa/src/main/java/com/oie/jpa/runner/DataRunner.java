@@ -11,9 +11,11 @@ import java.util.List;
 public class DataRunner implements CommandLineRunner {
 
     private final TrackRepository trackRepository;
+    private final InternRepository internRepository;
 
-    public DataRunner(TrackRepository trackRepository) {
+    public DataRunner(TrackRepository trackRepository, InternRepository internRepository) {
         this.trackRepository = trackRepository;
+        this.internRepository = internRepository;
     }
 
     @Override
@@ -21,6 +23,10 @@ public class DataRunner implements CommandLineRunner {
         System.out.println("All Tracks");
         List<Track> tracks = trackRepository.findAll();
         tracks.forEach(System.out::println);
+
+        System.out.println("find intern by email");
+        System.out.println(internRepository.findByEmail("omar.k@intern.com"));
+        System.out.println(internRepository.findByMentorIsNull());
 
     }
 
