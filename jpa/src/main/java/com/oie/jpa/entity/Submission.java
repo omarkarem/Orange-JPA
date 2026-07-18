@@ -19,7 +19,7 @@ public class Submission {
     @JoinColumn(name = "intern_id", nullable = false)
     private Intern intern;
 
-    @Column(name = "submission_at", nullable = false)
+    @Column(name = "submitted_at", nullable = false)
     private LocalDateTime submittedAt;
 
     @Column(name = "score")

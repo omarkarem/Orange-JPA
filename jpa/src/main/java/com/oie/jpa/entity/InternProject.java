@@ -11,7 +11,7 @@ public class InternProject {
 
     @ManyToOne
     @MapsId("internId")
-    @JoinColumn(name = "ïntern_id")
+    @JoinColumn(name = "intern_id")
     private Intern intern;
 
     @ManyToOne
