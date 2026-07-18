@@ -16,13 +16,14 @@ public class Project {
     @Column(name = "description")
     private String description;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)
-    private String status;
+    private ProjectStatus status;
 
     public Project() {
     }
 
-    public Project(String name, String description, String status) {
+    public Project(String name, String description, ProjectStatus status) {
         this.name = name;
         this.description = description;
         this.status = status;
@@ -52,11 +53,11 @@ public class Project {
         this.description = description;
     }
 
-    public String getStatus() {
+    public ProjectStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(ProjectStatus status) {
         this.status = status;
     }
 
