@@ -24,4 +24,10 @@ public interface InternRepository extends JpaRepository<Intern, Integer> {
     @Query("SELECT i FROM Intern i WHERE i.track.name = :trackName ORDER BY i.fullName")
     List<Intern> findByTrackNameOrdered(@Param("trackName") String trackName);
 
+    @Query("SELECT i.track.name, COUNT(i) FROM Intern i GROUP BY i.track.name")
+    List<Object[]> countInternsPerTrack();
+
+    @Query("SELECT i.mentor.fullName, COUNT(i) FROM Intern i WHERE i.mentor IS NOT NULL GROUP BY i.mentor.fullName")
+    List<Object[]> countInternsPerMentor();
+
 }

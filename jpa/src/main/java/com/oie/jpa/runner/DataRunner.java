@@ -41,6 +41,10 @@ public class DataRunner implements CommandLineRunner {
         System.out.println("Active: " + projectRepository.countByStatus(ProjectStatus.active));
         System.out.println("Planned: " + projectRepository.countByStatus(ProjectStatus.planned));
 
+        System.out.println("=== Interns Per Track ===");
+        internRepository.countInternsPerTrack()
+                .forEach(row -> System.out.println("Track: " + row[0] + ", Count: " + row[1]));
+
     }
 
 }
