@@ -59,18 +59,18 @@ mvn spring-boot:run
 
 ## Docker
 
-Build the image:
+The image is published on Docker Hub:
+```bash
+docker pull omarkarem/orange-jpa-app:1.0
+docker run --network host omarkarem/orange-jpa-app:1.0
+```
+
+Or build it locally:
 ```bash
 mvn clean package -DskipTests
 docker build -t orange-jpa-app .
-```
-
-Run it:
-```bash
 docker run --network host orange-jpa-app
 ```
-
-> On Windows/Mac replace `--network host` with `-e SPRING_DATASOURCE_URL=jdbc:postgresql://host.docker.internal:5432/internship_db`
 
 ---
 
