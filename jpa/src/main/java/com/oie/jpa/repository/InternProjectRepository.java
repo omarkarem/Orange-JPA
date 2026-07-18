@@ -14,6 +14,6 @@ public interface InternProjectRepository extends JpaRepository<InternProject, In
 
     List<InternProject> findByProjectId(Integer projectId);
 
-    List<InternProject> findByAssignedAtGreaterThanEqual(LocalDate date);
+    List<InternProject> findByAssignedDateGreaterThanEqual(LocalDate date);
 
 }

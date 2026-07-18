@@ -19,17 +19,17 @@ public class InternProject {
     @JoinColumn(name = "project_id")
     private Project project;
 
-    @Column(name = "assigned_at")
-    private LocalDate assignedAt;
+    @Column(name = "assigned_date", nullable = false)
+    private LocalDate assignedDate;
 
     public InternProject() {
     }
 
-    public InternProject(InternProjectId id, Intern intern, Project project, LocalDate assignedAt) {
+    public InternProject(InternProjectId id, Intern intern, Project project, LocalDate assignedDate) {
         this.id = id;
         this.intern = intern;
         this.project = project;
-        this.assignedAt = assignedAt;
+        this.assignedDate = assignedDate;
     }
 
     public InternProjectId getId() {
@@ -56,12 +56,12 @@ public class InternProject {
         this.project = project;
     }
 
-    public LocalDate getAssignedAt() {
-        return assignedAt;
+    public LocalDate getAssignedDate() {
+        return assignedDate;
     }
 
-    public void setAssignedAt(LocalDate assignedAt) {
-        this.assignedAt = assignedAt;
+    public void setAssignedDate(LocalDate assignedDate) {
+        this.assignedDate = assignedDate;
     }
 
 }
