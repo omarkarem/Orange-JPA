@@ -19,7 +19,7 @@ public class InternProject {
     @JoinColumn(name = "project_id")
     private Project project;
 
-    @Column(name = "assigned_at", nullable = false)
+    @Column(name = "assigned_at")
     private LocalDate assignedAt;
 
     public InternProject() {

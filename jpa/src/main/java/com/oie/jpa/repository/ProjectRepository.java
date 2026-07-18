@@ -11,8 +11,8 @@ import java.util.Optional;
 public interface ProjectRepository extends JpaRepository<Project, Integer> {
     List<Project> findByStatus(ProjectStatus status);
 
-    Optional<Project> findbyName(String name);
+    Optional<Project> findByName(String name);
 
-    int countByStatus(ProjectStatus status);
+    long countByStatus(ProjectStatus status);
 
 }
